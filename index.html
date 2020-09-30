@@ -1,13 +1,47 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 	<head> 
-		<title>LASTNAME Chapter14HandsOnExercise</title> 
+		<title>Daleske Chapter14HandsOnExercise</title> 
 		<meta charset="utf-8"> 
-		<style>
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+        <style>
+            
 		</style>
 	</head> 
 <body> 
-
+    <h1>User Form</h1>
+    <form method="post" action="http://webdevbasics.net/scripts/demo.php" onsubmit="return validateForm()";>
+        <label for="username">Name: </label>
+        <input type="text" name="userName" id="userName">
+        <label for="age">Age: </label>
+        <input type="text" name="userAge" id="userAge">
+        <label for="city">City: </label>
+        <input type="text" name="userCity" id="userCity">
+        <input type="submit" value="Send information" id="submit">
+    </form>
+    <script>
+        function validateForm() {
+            if (document.forms[0].userAge.value < 18){
+                alert ("Age is less than 18.");
+                return false;
+            }
+            else if (document.forms[0].userCity.value == ""){
+                alert ("City is empty, please input a city.");
+                return false;
+            }
+            
+                alert ("Age and City are valid.");
+                return true;
+        }
+    </script>
+    <h1>SlideShow</h1>
+    <div class="fotorama" data-auotplay="true">
+        <img src="background.jpg" data-caption="Working on Engines" alt="Working on Engines" width="600px" length="320px">
+        <img src="cars.jpg" data-caption="Rebuild Cars" alt="Rebuilt Cars" width="600px" length="320px">
+        <img src="icon.jpg" data-caption="Small Block Chevy Engine" alt="Small Block Chevy Engine" width="600px" length="320px">
+        <img src="tools.jpg" data-caption="Not Being Able to Find Tools" alt="Not Being Able to Find Tools" width="600px" length="320px">
+    </div>
 </body> 
 </html> 
